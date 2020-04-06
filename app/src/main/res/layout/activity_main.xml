@@ -22,6 +22,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@id/changeUserButton"
+        android:id="@+id/tvUser"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="the_first_avenger"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/changeUserButton"
+        android:visibility="invisible"
+        android:id="@+id/etUser"
         />
 
     <Button
@@ -31,6 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/changeUserButton"
+        android:onClick="changeUserClicked"
         />
     
     <ImageView
@@ -89,6 +102,7 @@
         android:id="@+id/playButton"
         android:background="@android:color/transparent"
         android:foreground="?selectableItemBackground"
+        android:onClick="playClicked"
         />
 
     <ImageButton
@@ -100,6 +114,7 @@
         app:layout_constraintTop_toBottomOf="@id/numberOfPlayTimes"
         android:background="@android:color/transparent"
         android:foreground="?selectableItemBackground"
+        android:onClick="nextClicked"
         />
     <ImageButton
         android:layout_width="wrap_content"
@@ -110,5 +125,6 @@
         app:layout_constraintTop_toBottomOf="@id/numberOfPlayTimes"
         android:background="@android:color/transparent"
         android:foreground="?selectableItemBackground"
+        android:onClick="prevClicked"
         />
     </androidx.constraintlayout.widget.ConstraintLayout>
