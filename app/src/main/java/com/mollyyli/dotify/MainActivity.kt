@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             tvUser.visibility = View.INVISIBLE
             changeUserButton.text = "APPLY"
         } else {
+            if(etUser.text.isEmpty()) {
+                Toast.makeText(this, "User Name cannot be empty", Toast.LENGTH_SHORT).show()
+                return
+            }
             tvUser.text = etUser.text
             etUser.visibility = View.INVISIBLE
             tvUser.visibility = View.VISIBLE
