@@ -13,11 +13,14 @@ I attempted extra credit #1.
 ### Screenshots
 
 ```
-<image alt="Screenshot of Dotify" src="/Users/mollyli/Library/Application Support/typora-user-images/Screen Shot 2020-04-09 at 3.04.35 PM.png" height="500" />
+<image alt="Screenshot" src="Screenshot.png" height="500" />
+
 
 ```
 
-![Screen Shot 2020-04-09 at 3.04.35 PM](/Users/mollyli/Library/Application Support/typora-user-images/Screen Shot 2020-04-09 at 3.04.35 PM.png)
+![ScreenShot](Screenshot.png)
+
+
 
 
 
