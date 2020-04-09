@@ -8,7 +8,7 @@ User can also change the user name by clicking the button "CHANGE USER" and when
 
 ### Extra Credit
 
-I did not attempt any extra credit due to time constraint. 
+I attempted extra credit #1.
 
 ### Screenshots
 
