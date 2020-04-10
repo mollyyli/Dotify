@@ -8,7 +8,7 @@ User can also change the user name by clicking the button "CHANGE USER" and when
 
 ### Extra Credit
 
-I attempted extra credit #1.
+I attempted extra credit #1 , #2, and #5.
 
 ### Screenshots
 

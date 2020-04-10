@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:id="@+id/clParent">
 
 <!--<TextView-->
 <!--android:layout_width="wrap_content"-->
@@ -47,13 +48,14 @@
         />
     
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/album_cover"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/changeUserButton"
         android:id="@+id/albumCover"
+        app:layout_constraintDimensionRatio="1:1"
 
         />
 

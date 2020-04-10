@@ -1,9 +1,11 @@
 package com.mollyyli.dotify
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatTextView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
@@ -15,6 +17,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         numberOfPlayTimes.text = "${randomNumber.toString()} plays"
+
+        albumCover.setOnLongClickListener { view: View? ->
+            var color = Color.argb(255, Random.nextInt(256), Random.nextInt(256), Random.nextInt(256))
+            for (i in 0..clParent.childCount) {
+                var child = clParent.getChildAt(i)
+                if (child is AppCompatTextView) {
+                    child.setTextColor(color)
+                }
+            }
+            return@setOnLongClickListener true
+        }
     }
 
     fun prevClicked(view: View) {
