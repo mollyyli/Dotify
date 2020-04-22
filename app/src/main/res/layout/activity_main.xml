@@ -54,7 +54,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/changeUserButton"
-        android:id="@+id/albumCover"
+        android:id="@+id/ivCurrentAlbumCover"
         app:layout_constraintDimensionRatio="1:1"
 
         />
@@ -63,11 +63,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sleep On The Floor"
-        app:layout_constraintTop_toBottomOf="@id/albumCover"
+        app:layout_constraintTop_toBottomOf="@id/ivCurrentAlbumCover"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:textSize="25sp"
-        android:id="@+id/songTitle"
+        android:id="@+id/tvSongTitle"
         />
 
     <TextView
@@ -76,9 +76,9 @@
         android:text="The Lumineers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/songTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvSongTitle"
         android:textSize="15sp"
-        android:id="@+id/artist"
+        android:id="@+id/tvCurrentArtist"
         android:ellipsize="end"
         android:singleLine="true"
         />
@@ -89,7 +89,7 @@
         android:text="1234"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/artist"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentArtist"
         android:textSize="15sp"
         android:id="@+id/numberOfPlayTimes"
         />
