@@ -14,9 +14,9 @@ None
 
 
 
-![hw2Screenshot](/Users/mollyli/AndroidStudioProjects/Dotify/hw2Screenshot.png)
+![hw2Screenshot](hw2Screenshot.png)
 
-![hw2Screenshot-2](/Users/mollyli/AndroidStudioProjects/Dotify/hw2Screenshot-2.png)
+![hw2Screenshot-2](hw2Screenshot-2.png)
 
-![hw2Screenshot-3](/Users/mollyli/AndroidStudioProjects/Dotify/hw2Screenshot-3.png)
+![hw2Screenshot-3](hw2Screenshot-3.png)
 
