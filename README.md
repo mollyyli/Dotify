@@ -10,6 +10,10 @@ None
 
 ### Screenshots
 
+
+
+** I don't know why the images can't render on github but all the screenshots marked as "hw3screenshot1",  "hw3screenshot2",  "hw3screenshot3",  "hw3screenshot4" and  "hw3screenshot5." They are all available on github.
+
 ![hw3Screenshot](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot.png)
 
 ![hw3Screenshot2](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot2.png)
