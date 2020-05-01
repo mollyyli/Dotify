@@ -1,17 +1,14 @@
-package com.mollyyli.dotify
+package com.mollyyli.dotify.activity
 
-import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore.Audio.AudioColumns.TITLE_KEY
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import com.ericchee.songdataprovider.Song
+import com.mollyyli.dotify.R
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_song_list.*
-import kotlinx.android.synthetic.main.item_song.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {

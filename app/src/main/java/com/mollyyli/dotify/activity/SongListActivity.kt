@@ -1,11 +1,12 @@
-package com.mollyyli.dotify
+package com.mollyyli.dotify.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore.Audio.AudioColumns.TITLE_KEY
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import com.mollyyli.dotify.R
+import com.mollyyli.dotify.model.SongListAdaptor
 import kotlinx.android.synthetic.main.activity_song_list.*
 
 class SongListActivity : AppCompatActivity() {
@@ -19,8 +20,6 @@ class SongListActivity : AppCompatActivity() {
         val songListAdaptor = SongListAdaptor(allSongs)
         rvSongs.adapter = songListAdaptor
 
-//
-//
         tvMiniPlayer.setOnClickListener {
             val intent = Intent(this, MainActivity:: class.java)
             intent.putExtra("SONG_INFO", currentSong)
@@ -38,5 +37,8 @@ class SongListActivity : AppCompatActivity() {
             tvMiniPlayer.text = "${it.title} - ${it.artist}"
             this.currentSong = it
         }
+
+
     }
+
 }

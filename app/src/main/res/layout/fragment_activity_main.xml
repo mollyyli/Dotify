@@ -6,58 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
     android:padding="16dp"
-    android:id="@+id/clParent">
+    android:id="@+id/clParent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
 
-<!--<TextView-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:text="Hello World!"-->
-<!--app:layout_constraintBottom_toBottomOf="parent"-->
-<!--app:layout_constraintLeft_toLeftOf="parent"-->
-<!--app:layout_constraintRight_toRightOf="parent"-->
-<!--app:layout_constraintTop_toTopOf="parent" />-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="the_first_avenger"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@id/changeUserButton"
-        android:id="@+id/tvUser"
-        />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="the_first_avenger"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@id/changeUserButton"
-        android:visibility="invisible"
-        android:id="@+id/etUser"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CHANGE USER"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/changeUserButton"
-        android:onClick="changeUserClicked"
-        />
 
     <ImageView
+        android:id="@+id/ivCurrentAlbumCover"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/album_cover"
+        tools:src="@drawable/album_cover"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/changeUserButton"
-        android:id="@+id/ivCurrentAlbumCover"
-        app:layout_constraintDimensionRatio="1:1"
 
-        />
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +50,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1234"
+        tools:text="1234"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCurrentArtist"
@@ -108,6 +72,7 @@
         />
 
     <ImageButton
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher_next_button"
@@ -119,6 +84,7 @@
         android:onClick="nextClicked"
         />
     <ImageButton
+        android:id="@+id/prevButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher_previous_button"
