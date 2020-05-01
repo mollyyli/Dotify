@@ -16,7 +16,7 @@ None
 
 ![hw3Screenshot2](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot2.png)
 
-![hw3Screenshot3](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot3.png)
+![hw3Screenshot32](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot3.png)
 
 ![hw3Screenshot4](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot4.png)
 
