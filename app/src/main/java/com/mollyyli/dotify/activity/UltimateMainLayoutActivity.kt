@@ -1,14 +1,11 @@
 package com.mollyyli.dotify.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.ericchee.songdataprovider.Song
-import com.ericchee.songdataprovider.SongDataProvider
-import com.google.gson.Gson
 import com.mollyyli.dotify.ApiManager
 import com.mollyyli.dotify.MusicApp
 import com.mollyyli.dotify.MusicManager
@@ -16,10 +13,11 @@ import com.mollyyli.dotify.R
 import com.mollyyli.dotify.fragment.NowPlayingFragment
 import com.mollyyli.dotify.fragment.OnSongClickListener
 import com.mollyyli.dotify.fragment.SongListFragment
-import com.mollyyli.dotify.model.AllSongs
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_ultimate_main_layout.*
-import kotlinx.android.synthetic.main.fragment_song_list.*
-import java.util.*
+import sun.jvm.hotspot.utilities.IntArray
+import sun.security.krb5.internal.KDCOptions.with
+
 
 class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
 
@@ -48,6 +46,9 @@ class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
         apiManager.getSongs({allSongs ->
                 listOfSongs = allSongs.songs
                 Log.i("main", listOfSongs.toString())
+//                for (url in listofSongs.smallImageURL) {
+//                    Picasso.with(applicationContext).load(url).fetch()
+//                }
             },
             {
                 Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
@@ -61,7 +62,6 @@ class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
                 supportFragmentManager
                     .beginTransaction()
                     .add(R.id.fragContainer, it, SongListFragment.TAG)
-//                .addToBackStack(SongListFragment.TAG)
                     .commit()
             }
 
@@ -103,47 +103,6 @@ class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
             }
         }
     }
-
-//    private fun fetchDataWithGson() {
-//
-//        val gson = Gson()
-//
-//        val song: Song = gson.fromJson(songOverviewJSONString, AllSongs::class.java)
-//
-////        email.from
-////        email.content
-////        email.id
-//
-////
-////        email.content?.let {
-////            Log.i(TAG, "Found an content of: $it")
-////        } ?: Toast.makeText(this, "Sorry invalid data", Toast.LENGTH_SHORT).show()
-//
-//    }
-//    private val songOverviewJSONString = """
-//        {
-//          "title": "Dotify",
-//          "numOfSongs": 47,
-//          "songs": [
-//            {
-//              "id": "1588825540885InTheEnd_LinkinPark",
-//              "title": "In The End",
-//              "artist": "Linkin Park",
-//              "durationMillis": 193790,
-//              "smallImageURL": "https://picsum.photos/seed/InTheEnd/50",
-//              "largeImageURL": "https://picsum.photos/seed/InTheEnd/256"
-//            },
-//            {
-//              "id": "1588825540953MaskDefinitelyOn_Future",
-//              "title": "Mask Definitely On",
-//              "artist": "Future",
-//              "durationMillis": 92949,
-//              "smallImageURL": "https://picsum.photos/seed/MaskDefinitelyOn/50",
-//              "largeImageURL": "https://picsum.photos/seed/MaskDefinitelyOn/256"
-//            },
-//            ]
-//        }
-//    """.trimIndent()
 
 
 
