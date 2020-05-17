@@ -48,5 +48,15 @@
             app:layout_constraintRight_toRightOf="parent"
             android:text="@string/shuffle"
             android:textSize="20sp"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/btnClick"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            android:text="@string/click"-->
+<!--            android:textSize="20sp" />-->
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ericchee.songdataprovider.Song
+import com.mollyyli.dotify.MusicApp
 import com.mollyyli.dotify.R
 import com.mollyyli.dotify.model.SongListAdaptor
+import kotlinx.android.synthetic.main.activity_ultimate_main_layout.*
 import kotlinx.android.synthetic.main.fragment_song_list.*
 
 class SongListFragment: Fragment() {
@@ -19,6 +21,7 @@ class SongListFragment: Fragment() {
     private var allSongs: List<Song>? = null
 
     private var onSongClickListener: OnSongClickListener? = null
+
 
     companion object {
         const val ALL_SONGS = "all_songs"

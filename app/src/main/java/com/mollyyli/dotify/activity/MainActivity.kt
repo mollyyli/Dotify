@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import com.ericchee.songdataprovider.Song
+import com.mollyyli.dotify.MusicApp
 import com.mollyyli.dotify.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val apiManager = (application as MusicApp).apiManager
         numberOfPlayTimes.text = "${randomNumber.toString()} plays"
         val song = intent.getParcelableExtra<Song>(SONG)
         tvSongTitle.text = song.title

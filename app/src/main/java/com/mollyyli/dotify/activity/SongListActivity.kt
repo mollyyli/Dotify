@@ -20,23 +20,23 @@ class SongListActivity : AppCompatActivity() {
         val songListAdaptor = SongListAdaptor(allSongs)
         rvSongs.adapter = songListAdaptor
 
-        tvMiniPlayer.setOnClickListener {
-            val intent = Intent(this, MainActivity:: class.java)
-            intent.putExtra("SONG_INFO", currentSong)
-            startActivity(intent)
-        }
+//        tvMiniPlayer.setOnClickListener {
+//            val intent = Intent(this, MainActivity:: class.java)
+//            intent.putExtra("SONG_INFO", currentSong)
+//            startActivity(intent)
+//        }
+////
+//        btnShuffle.setOnClickListener {
+//            val newSongs = allSongs.toMutableList().apply {
+//                shuffle()
+//            }
+//            songListAdaptor.change(newSongs)
+//        }
 //
-        btnShuffle.setOnClickListener {
-            val newSongs = allSongs.toMutableList().apply {
-                shuffle()
-            }
-            songListAdaptor.change(newSongs)
-        }
-
-        songListAdaptor.onSongClickListener = {
-            tvMiniPlayer.text = "${it.title} - ${it.artist}"
-            this.currentSong = it
-        }
+//        songListAdaptor.onSongClickListener = {
+//            tvMiniPlayer.text = "${it.title} - ${it.artist}"
+//            this.currentSong = it
+//        }
 
 
     }

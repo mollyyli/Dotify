@@ -1,8 +1,6 @@
-# HW3 - Dotify by Molly Li
+# HW4 - Dotify by Molly Li
 
-This app will display a song list that's retrieved from SongDataProvider using RecyclerView. There are song titles, the artists' names and album image in the list. At the bottom of the list, there will also be a "Shuffle" button that allows you to shuffle the order of the songs. When you click the song displayed at the bottom, it will lead you to another page using Activities. When you rotate the phone, the list will render the list based on the previous order. 
-
-On the next page, it'll generate a random number and when user clicks on play button, it will add the random number by one. Similarly, when you rotate the phone, the random number should stay the same and if you click on the play button, it should increment by one. 
+This app will display data (a list of songs) from parsing JSON from the http request. I am using https://raw.githubusercontent.com/echeeUW/codesnippets/master/musiclibrary.json library as my JSON data.
 
 ### Extra Credit
 
@@ -10,16 +8,7 @@ None
 
 ### Screenshots
 
+![hw3Screenshot](/Users/mollyli/AndroidStudioProjects/Dotify/hw4-screenshot.png)
 
 
-** I don't know why the images can't render on github but all the screenshots marked as "hw3screenshot1",  "hw3screenshot2",  "hw3screenshot3",  "hw3screenshot4" and  "hw3screenshot5." They are all available on github.
 
-![hw3Screenshot](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot.png)
-
-![hw3Screenshot2](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot2.png)
-
-![hw3Screenshot3](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot3.png)
-
-![hw3Screenshot4](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot4.png)
-
-![hw3Screenshot5](/Users/mollyli/AndroidStudioProjects/Dotify/hw3Screenshot5.png)

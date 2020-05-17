@@ -5,19 +5,25 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import com.google.gson.Gson
+import com.mollyyli.dotify.ApiManager
+import com.mollyyli.dotify.MusicApp
+import com.mollyyli.dotify.MusicManager
 import com.mollyyli.dotify.R
 import com.mollyyli.dotify.fragment.NowPlayingFragment
 import com.mollyyli.dotify.fragment.OnSongClickListener
 import com.mollyyli.dotify.fragment.SongListFragment
+import com.mollyyli.dotify.model.AllSongs
 import kotlinx.android.synthetic.main.activity_ultimate_main_layout.*
 import kotlinx.android.synthetic.main.fragment_song_list.*
 import java.util.*
 
 class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
 
-    private lateinit var listOfSongs: List<Song>
+    private var listOfSongs: List<Song>? = null
 
     private var songListFragment: SongListFragment? =null
 
@@ -25,28 +31,32 @@ class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
 
     private var currentSong: Song? = null
 
+    lateinit var apiManager: ApiManager
+
+    lateinit var musicManager: MusicManager
+
     companion object {
         private const val CURRENT_SONG = "CURRENT_SONG"
     }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ultimate_main_layout)
 
-        if(savedInstanceState != null) {
-            with(savedInstanceState) {
-                currentSong = getParcelable(CURRENT_SONG)
-                currentSong?.let {
-                    tvMiniPlayer.text = "${it.title} - ${it.artist}"
-                }
-            }
-        }
-
-
+        apiManager = (application as MusicApp).apiManager
+        apiManager.getSongs({allSongs ->
+                listOfSongs = allSongs.songs
+                Log.i("main", listOfSongs.toString())
+            },
+            {
+                Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+            })
         if (supportFragmentManager.findFragmentByTag(SongListFragment.TAG) == null) {
+            listOfSongs?.let {
+                songListFragment = SongListFragment.getInstance(it)
+            }
 
-            var allSongs = SongDataProvider.getAllSongs()
-
-            songListFragment = SongListFragment.getInstance(allSongs)
             songListFragment?.let {
                 supportFragmentManager
                     .beginTransaction()
@@ -69,6 +79,7 @@ class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
         btnShuffle.setOnClickListener {
             val listFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG) as SongListFragment
             songListFragment?.shuffleList()
+
         }
 
         tvMiniPlayer.setOnClickListener {
@@ -92,6 +103,48 @@ class UltimateMainLayoutActivity : AppCompatActivity(), OnSongClickListener {
             }
         }
     }
+
+//    private fun fetchDataWithGson() {
+//
+//        val gson = Gson()
+//
+//        val song: Song = gson.fromJson(songOverviewJSONString, AllSongs::class.java)
+//
+////        email.from
+////        email.content
+////        email.id
+//
+////
+////        email.content?.let {
+////            Log.i(TAG, "Found an content of: $it")
+////        } ?: Toast.makeText(this, "Sorry invalid data", Toast.LENGTH_SHORT).show()
+//
+//    }
+//    private val songOverviewJSONString = """
+//        {
+//          "title": "Dotify",
+//          "numOfSongs": 47,
+//          "songs": [
+//            {
+//              "id": "1588825540885InTheEnd_LinkinPark",
+//              "title": "In The End",
+//              "artist": "Linkin Park",
+//              "durationMillis": 193790,
+//              "smallImageURL": "https://picsum.photos/seed/InTheEnd/50",
+//              "largeImageURL": "https://picsum.photos/seed/InTheEnd/256"
+//            },
+//            {
+//              "id": "1588825540953MaskDefinitelyOn_Future",
+//              "title": "Mask Definitely On",
+//              "artist": "Future",
+//              "durationMillis": 92949,
+//              "smallImageURL": "https://picsum.photos/seed/MaskDefinitelyOn/50",
+//              "largeImageURL": "https://picsum.photos/seed/MaskDefinitelyOn/256"
+//            },
+//            ]
+//        }
+//    """.trimIndent()
+
 
 
     private fun getNowPlayingFragment() = supportFragmentManager.findFragmentByTag(NowPlayingFragment.TAG) as? NowPlayingFragment
